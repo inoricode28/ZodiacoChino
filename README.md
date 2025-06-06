@@ -56,4 +56,43 @@ String[] signos = {
 };
 
 String signo = signos[anio % 12];
+ ```
+## 🎨 Interfaz de usuario
+
+- `index.html` contiene un formulario diseñado con **Bootstrap 5** para ingresar el año de nacimiento.
+- `resultado.html` muestra:
+   - El signo del zodiaco chino.
+   - Un ícono representativo.
+   - Una breve descripción del signo.
+
+- Se utiliza **Bootstrap 5** para lograr una presentación responsiva y moderna.
+- Se integran íconos de **Font Awesome 6** para una mejor representación visual del signo del zodiaco.
+
+## ▶️ Cómo ejecutar el proyecto
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/inoricode28/ZodiacoChino.git
+cd ZodiacoChino
+ ```
+2. Asegúrate de tener Java 21 y Maven 3.8+ instalados en tu sistema.
+
+3. Ejecuta la aplicación:
+```bash
+./mvnw spring-boot:run
+ ```
+4. Abre tu navegador y visita:
+```bash
+http://localhost:9090
+ ```
+5. Vista Del Proyecto
+
+   ![Zodiaco Chino](Inicio.jpg)
+6. Vista del Resultado
+   ![Zodiaco Chino](Resultado.jpg)
+
+
+
+
 
