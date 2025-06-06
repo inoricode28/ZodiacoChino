@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zodíaco Chino</title>
+    <link th:href="@{/styles/bootstrap/bootstrap.css}"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/styles/styles.css}">
+</head>
+<body>
+<div class="container">
+    <div class="card mb-4">
+        <div class="card-header text-center">
+            <div class="logo">
+                <i class="fas fa-dragon"></i>
+            </div>
+            <h1>Zodíaco Chino</h1>
+            <p class="mb-0">Descubre tu signo en el calendario chino</p>
+        </div>
+        <div class="card-body">
+            <div id="form-section">
+                <div class="text-center mb-4">
+                    <p>Ingresa tu año de nacimiento para descubrir tu signo zodiacal chino</p>
+                </div>
+
+                <form th:action="@{/calcular}" method="post">
+                    <div class="mb-4">
+                        <label for="birth-year" class="form-label">Año de nacimiento</label>
+                        <input type="number" class="form-control form-control-lg"
+                               id="birth-year" name="anio"
+                               min="1900" max="2100"
+                               placeholder="Ej: 1997" required>
+                        <div th:if="${error}" class="alert alert-danger mt-2" th:text="${error}"></div>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calculator me-2"></i>Calcular mi signo
+                        </button>
+                    </div>
+                </form>
+
+                <div class="text-center mt-4">
+                    <p class="mb-2">O selecciona un animal para conocer su año:</p>
+                    <div class="animals-grid">
+                        <div class="animal" data-sign="Mono">
+                            <i class="fas fa-monkey"></i>
+                            <span>Mono</span>
+                        </div>
+                        <div class="animal" data-sign="Gallo">
+                            <i class="fas fa-crow"></i>
+                            <span>Gallo</span>
+                        </div>
+                        <div class="animal" data-sign="Perro">
+                            <i class="fas fa-dog"></i>
+                            <span>Perro</span>
+                        </div>
+                        <div class="animal" data-sign="Cerdo">
+                            <i class="fas fa-piggy-bank"></i>
+                            <span>Cerdo</span>
+                        </div>
+                        <div class="animal" data-sign="Rata">
+                            <i class="fas fa-rat"></i>
+                            <span>Rata</span>
+                        </div>
+                        <div class="animal" data-sign="Buey">
+                            <i class="fas fa-cow"></i>
+                            <span>Buey</span>
+                        </div>
+                        <div class="animal" data-sign="Tigre">
+                            <i class="fas fa-paw"></i>
+                            <span>Tigre</span>
+                        </div>
+                        <div class="animal" data-sign="Conejo">
+                            <i class="fas fa-rabbit"></i>
+                            <span>Conejo</span>
+                        </div>
+                        <div class="animal" data-sign="Dragón">
+                            <i class="fas fa-dragon"></i>
+                            <span>Dragón</span>
+                        </div>
+                        <div class="animal" data-sign="Serpiente">
+                            <i class="fas fa-staff-snake"></i>
+                            <span>Serpiente</span>
+                        </div>
+                        <div class="animal" data-sign="Caballo">
+                            <i class="fas fa-horse"></i>
+                            <span>Caballo</span>
+                        </div>
+                        <div class="animal" data-sign="Cabra">
+                            <i class="fas fa-sheep"></i>
+                            <span>Cabra</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span> Zodíaco Chino | Todos los derechos reservados</p>
+    </div>
+</div>
+
+<script th:src="@{/scripts/bootstrap/bootstrap.bundle.js}"
+        type="text/javascript"></script>
+<script th:src="@{/scripts/script.js}"></script>
+</body>
+</html>
