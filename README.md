@@ -28,3 +28,59 @@ Este es un proyecto web desarrollado en **Spring Boot (MVC)** que permite al usu
 ---
 
 ## 📁 Estructura del proyecto
+
+ZodiacoChino/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── pe/
+│   │   │       └── idat/
+│   │   │           └── EC01_ZodiacoChino/
+│   │   │               ├── Controllers/
+│   │   │               │   └── ZodiacoController.java
+│   │   │               ├── Models/
+│   │   │               │   └── ZodiacoInfo.java
+│   │   │               └── EC01ZodiacoChinoApplication.java
+│   │   ├── resources/
+│   │   │   ├── static/
+│   │   │   │   └── css/
+│   │   │   │       └── styles.css
+│   │   │   ├── templates/
+│   │   │   │   ├── index.html
+│   │   │   │   └── resultado.html
+│   │   │   └── application.properties
+│   └── test/
+│       └── ...
+├── pom.xml
+└── README.md
+
+
+
+
+---
+
+## 📝 Clases clave
+
+### `ZodiacoController.java`
+Controlador que maneja:
+- La ruta `/` (formulario).
+- La ruta `/calcular` (procesamiento del año ingresado).
+
+### `ZodiacoInfo.java`
+Modelo para representar la información adicional del signo:
+- `icon`: clase Font Awesome.
+- `description`: texto explicativo del signo.
+
+---
+
+## 💡 Lógica de cálculo
+
+```java
+String[] signos = {
+    "Mono", "Gallo", "Perro", "Cerdo", "Rata", "Buey",
+    "Tigre", "Conejo", "Dragón", "Serpiente", "Caballo", "Cabra"
+};
+
+String signo = signos[anio % 12];
+
