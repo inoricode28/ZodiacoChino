@@ -29,34 +29,7 @@ Este es un proyecto web desarrollado en **Spring Boot (MVC)** que permite al usu
 
 ## 📁 Estructura del proyecto
 
-ZodiacoChino/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── pe/
-│   │   │       └── idat/
-│   │   │           └── EC01_ZodiacoChino/
-│   │   │               ├── Controllers/
-│   │   │               │   └── ZodiacoController.java
-│   │   │               ├── Models/
-│   │   │               │   └── ZodiacoInfo.java
-│   │   │               └── EC01ZodiacoChinoApplication.java
-│   │   ├── resources/
-│   │   │   ├── static/
-│   │   │   │   └── css/
-│   │   │   │       └── styles.css
-│   │   │   ├── templates/
-│   │   │   │   ├── index.html
-│   │   │   │   └── resultado.html
-│   │   │   └── application.properties
-│   └── test/
-│       └── ...
-├── pom.xml
-└── README.md
-
-
-
+![Zodiaco Chino](Estructura.jpg)
 
 ---
 
